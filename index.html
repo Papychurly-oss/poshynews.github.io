@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Poshy News</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Reset */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #e0e0e0;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    header {
+      text-align: center;
+      padding: 2rem 1rem 3rem;
+      background: rgba(255 255 255 / 0.1);
+      backdrop-filter: saturate(180%) blur(12px);
+      -webkit-backdrop-filter: saturate(180%) blur(12px);
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    /* Neon Glow Title */
+    h1.site-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 3.5rem;
+      color: #00fff7;
+      text-shadow:
+        0 0 5px #00fff7,
+        0 0 10px #00fff7,
+        0 0 20px #00fff7,
+        0 0 40px #00fff7,
+        0 0 80px #00fff7;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Navigation */
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+    nav a {
+      color: #00fff7;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      text-shadow:
+        0 0 3px #00fff7,
+        0 0 7px #00fff7;
+    }
+    nav a:hover {
+      background: #00fff7;
+      color: #001f22;
+      box-shadow:
+        0 0 10px #00fff7,
+        0 0 20px #00fff7,
+        0 0 30px #00fff7;
+      text-shadow: none;
+    }
+
+    /* Frosted Glass Sections */
+    section {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 2rem 3rem;
+      background: rgba(255 255 255 / 0.1);
+      backdrop-filter: saturate(180%) blur(15px);
+      -webkit-backdrop-filter: saturate(180%) blur(15px);
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 255, 247, 0.2);
+      color: #e0e0e0;
+      scroll-margin-top: 80px; /* For anchor smoothness */
+    }
+
+    /* Distinct gradient backgrounds for pages */
+    #about {
+      background: linear-gradient(135deg, rgba(13,71,161,0.7), rgba(2,0,36,0.7));
+    }
+    #news {
+      background: linear-gradient(135deg, rgba(0,128,128,0.7), rgba(0,50,50,0.7));
+    }
+    #contact {
+      background: linear-gradient(135deg, rgba(128,0,128,0.7), rgba(50,0,50,0.7));
+    }
+    #blog {
+      background: linear-gradient(135deg, rgba(0,255,255,0.7), rgba(0,80,80,0.7));
+    }
+
+    /* Section Headings */
+    section h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #00fff7;
+      text-shadow:
+        0 0 10px #00fff7,
+        0 0 20px #00fff7;
+      letter-spacing: 0.05em;
+      border-bottom: 2px solid #00fff7;
+      padding-bottom: 0.3rem;
+    }
+
+    /* Motivational Quote */
+    .quote {
+      font-style: italic;
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 1.3rem;
+      color: #88ffff;
+      text-shadow:
+        0 0 5px #00fff7;
+    }
+
+    /* News List */
+    ul.news-list {
+      list-style: none;
+      padding-left: 0;
+    }
+    ul.news-list li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #00fff7aa;
+      font-weight: 600;
+      transition: color 0.3s ease;
+      cursor: pointer;
+    }
+    ul.news-list li:hover {
+      color: #00fff7;
+      text-shadow: 0 0 5px #00fff7;
+    }
+
+    /* Blog Posts */
+    .blog-post {
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #00fff7aa;
+    }
+    .blog-post h3 {
+      font-family: 'Orbitron', sans-serif;
+      color: #00fff7;
+      text-shadow: 0 0 10px #00fff7;
+      margin-bottom: 0.5rem;
+    }
+    .blog-post p {
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #c0ffff;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1rem;
+      color: #00575b;
+      font-size: 0.9rem;
+      margin-top: 4rem;
+      text-shadow: 0 0 3px #00fff7;
+    }
+
+    /* Smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      section {
+        margin: 2rem 1rem;
+        padding: 1.5rem 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1 class="site-title">Poshy News</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#news">News</a>
+      <a href="#blog">Blog</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>Poshy News is dedicated to telling stories through the lens and the written word, focusing on issues that matter most to students.</p>
+    <p class="quote">"Education is the most powerful weapon which you can use to change the world." – Nelson Mandela</p>
+  </section>
+
+  <section id="news">
+    <h2>Student News</h2>
+    <ul class="news-list">
+      <li>New scholarship programs launched for Tanzanian students.</li>
+      <li>University exam schedules released for 2025 academic year.</li>
+      <li>Student protests call for better campus facilities.</li>
+      <li>Online learning platforms see increased adoption.</li>
+      <li>Tips for managing student mental health during exams.</li>
+    </ul>
+  </section>
+
+  <section id="blog">
+    <h2>Blog</h2>
+    <article class="blog-post">
+      <h3>How to Balance Study and Photography</h3>
+      <p>Discover effective tips to manage your time so you can pursue photography alongside your academic goals.</p>
+    </article>
+    <article class="blog-post">
+      <h3>The Impact of Digital Media on Student Life</h3>
+      <p>Exploring how social media and digital journalism are reshaping how students interact and learn.</p>
+    </article>
+    <article class="blog-post">
+      <h3>Interview with a Student Photographer</h3>
+      <p>Insights from a talented university student who is making waves with their compelling photo stories.</p>
+    </article>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Have questions or want to share your story? Reach out to us:</p>
+    <ul>
+      <li>Email: contact@poshynews.com</li>
+      <li>Instagram: <a href="https://instagram.com/poshynews" target="_blank" style="color:#00fff7;">@poshynews</a></li>
+      <li>Twitter: <a href="https://twitter.com/poshynews" target="_blank" style="color:#00fff7;">@poshynews</a></li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>© 2025 Poshy News. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
